@@ -155,6 +155,8 @@ NSString *const SUUpdaterAppcastNotificationKey = @"SUUpdaterAppCastNotification
 
 - (BOOL)startUpdater:(NSError * __autoreleasing *)error
 {
+    SULog(SULogLevelError, @"Warning: STARTING UPDATER...");
+          
     if (_startedUpdater) {
         return YES;
     }

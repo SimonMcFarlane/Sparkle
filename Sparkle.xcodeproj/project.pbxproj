@@ -2893,6 +2893,8 @@
 				72D954BA1CBB6E27006F28BD /* PBXTargetDependency */,
 			);
 			name = Sparkle;
+			packageProductDependencies = (
+			);
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = Sparkle;
 			productReference = 8DC2EF5B0486A6940098B216 /* Sparkle.framework */;
