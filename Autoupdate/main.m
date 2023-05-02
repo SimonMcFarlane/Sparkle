@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "AppInstaller.h"
 
-
 #include "AppKitPrevention.h"
 
 int main(int __unused argc, const char __unused *argv[])
@@ -17,6 +16,8 @@ int main(int __unused argc, const char __unused *argv[])
         NSString *homeDirectory = args[2];
         NSString *userName = args[3];
         
+        NSLog(@"🌉 Sparkle Fork - TEST");
+        
         AppInstaller *appInstaller = [[AppInstaller alloc] initWithHostBundleIdentifier:hostBundleIdentifier homeDirectory:homeDirectory userName:userName];
         [appInstaller start];
         
@@ -31,6 +32,13 @@ int main(int __unused argc, const char __unused *argv[])
             [appInstaller cleanupAndExitWithStatus:SIGTERM error:nil];
         });
         dispatch_resume(sigtermSource);
+        
+//        [DDLog addLogger:[DDOSLogger sharedInstance]]; // Uses os_log
+//
+//        DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+//        fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+//        fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//        [DDLog addLogger:fileLogger];
         
         [[NSRunLoop currentRunLoop] run];
     }
